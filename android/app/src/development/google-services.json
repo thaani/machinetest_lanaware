@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "482213096808",
+    "project_id": "lanaware-machinetest",
+    "storage_bucket": "lanaware-machinetest.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:482213096808:android:933bd087759d95f9ac3add",
+        "android_client_info": {
+          "package_name": "com.example.verygoodcore.employeedirectory.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "482213096808-f9rdv1igcgca3fj0ct6rvj3drnff6g10.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAEg8CAy0d549uKvaigaPtIgKO-L1c7CuI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "482213096808-f9rdv1igcgca3fj0ct6rvj3drnff6g10.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
