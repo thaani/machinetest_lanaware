@@ -16,10 +16,10 @@ class AppbarWidget extends StatelessWidget {
             icon: const Icon(Icons.search),
             color: Colors.black,
             onPressed: () {
-              // showSearch<dynamic>(
-              //   context: context,
-              //   delegate: CustomSearch(),
-              // );
+              showSearch<dynamic>(
+                context: context,
+                delegate: CustomSearch(),
+              );
             },
           ),
         ),
