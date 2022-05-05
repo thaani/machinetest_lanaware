@@ -8,58 +8,43 @@ class EmployeeDetailWidget extends StatelessWidget {
   Employee singleEmployee;
   @override
   Widget build(BuildContext context) {
-    return Card(
-      elevation: 0.1,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Expanded(
-            child: Image.network(singleEmployee.profileImage),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Employee Details'),
+      ),
+      body: Center(
+        child: Container(
+            child: Center(
+          child: ListView(
+            children: [
+              Expanded(child: Image.network(singleEmployee.profileImage)),
+              Expanded(
+                  child: Text(
+                singleEmployee.name.toString(),
+                style: const TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                ),
+              )),
+              Divider(),
+              Expanded(
+                child: Text(
+                  singleEmployee.email.toString(),
+                ),
+              ),
+              Divider(),
+              Expanded(child: Text(singleEmployee.phone.toString())),
+              Divider(),
+              Expanded(child: Text(singleEmployee.website.toString())),
+              Divider(),
+              Expanded(child: Text(singleEmployee.address.city.toString())),
+              Divider(),
+              Expanded(child: Text(singleEmployee.address.street.toString())),
+              Divider(),
+              Expanded(child: Text(singleEmployee.address.zipcode.toString())),
+            ],
           ),
-          ListTile(
-            title: Column(children: [
-              Expanded(
-                child: Text(
-                  singleEmployee.name,
-                  style: const TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-              Expanded(
-                child: Text(
-                  singleEmployee.email,
-                  style: const TextStyle(
-                      color: Colors.green, fontWeight: FontWeight.bold),
-                ),
-              ),
-              Expanded(
-                child: Text(
-                  singleEmployee.phone,
-                  style: const TextStyle(
-                      color: Colors.green, fontWeight: FontWeight.bold),
-                ),
-              ),
-              Expanded(
-                child: Text(
-                  singleEmployee.website,
-                  style: const TextStyle(
-                      color: Colors.green, fontWeight: FontWeight.bold),
-                ),
-              ),
-              Expanded(
-                child: Column(children: [
-                  Text(
-                    singleEmployee.address.city,
-                  ),
-                  Text(singleEmployee.address.street),
-                  Text(singleEmployee.address.zipcode),
-                ]),
-              ),
-            ]),
-          ),
-        ],
+        )),
       ),
     );
   }

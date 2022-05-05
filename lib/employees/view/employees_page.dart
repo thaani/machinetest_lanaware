@@ -2,6 +2,7 @@ import 'package:employeedirectory/counter/counter.dart';
 import 'package:employeedirectory/employees/bloc/employees_bloc.dart';
 import 'package:employeedirectory/employees/view/widgets/appbar_widget.dart';
 import 'package:employeedirectory/employees/view/widgets/employee_detail_widget.dart';
+import 'package:employeedirectory/employees/view/widgets/employee_tile_widget.dart';
 import 'package:employeedirectory/router/router_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -27,42 +28,7 @@ class EmployeesPage extends StatelessWidget {
                 child: ListView.builder(
                   itemCount: state.data.length,
                   itemBuilder: (context, index) {
-                    return InkWell(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute<void>(
-                            builder: (BuildContext context) =>
-                                EmployeeDetailWidget(
-                                    singleEmployee: state.data[index]),
-                          ),
-                        );
-                      },
-                      child: ListTile(
-                        leading: CircleAvatar(
-                          radius: 20,
-                          child: Image.network(
-                              state.data[index].profileImage.toString()),
-                        ),
-                        title: Expanded(
-                          child: Text(
-                            state.data[index].name,
-                            style: const TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                        subtitle: Expanded(
-                            child: Column(children: [
-                          Text(
-                            state.data[index].address.city,
-                          ),
-                          Text(state.data[index].address.street),
-                          Text(state.data[index].address.zipcode),
-                        ])),
-                      ),
-                    );
+                    return EmployeeTileWidget(data: state.data[index]);
                   },
                 ),
               );
